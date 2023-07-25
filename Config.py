@@ -1,0 +1,12 @@
+face_object = None
+mines_counter_object = None
+clock_object = None
+images = {}
+rows = 15
+columns = 30
+time = 0
+mines_number = 50
+flags_number_left = mines_number
+number_guessed_mines = 0
+is_this_end_game = False
+is_clock_work = True
