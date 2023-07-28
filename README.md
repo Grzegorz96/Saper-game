@@ -91,6 +91,10 @@ E-mail: grzesstrzeszewski@gmail.com
 
 
 ## Screnshoots
+Screenshot of the difficulty level selection window
+Screenshot of the beginner level game
+![start_window](https://github.com/Grzegorz96/Saper-game/assets/129303867/b44363b8-3329-4bfa-898c-20db28ebe366)
+![beginner](https://github.com/Grzegorz96/Saper-game/assets/129303867/375bded5-ff57-4640-8665-825f796abf2e)
 
 
 
