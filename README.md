@@ -99,9 +99,25 @@ E-mail: grzesstrzeszewski@gmail.com
 ![beginner](https://github.com/Grzegorz96/Saper-game/assets/129303867/375bded5-ff57-4640-8665-825f796abf2e)
 ![scared_face](https://github.com/Grzegorz96/Saper-game/assets/129303867/4b05b591-d62b-4e63-9064-688fd67aef10)
 
+##### Screenshot of lose in beginner level
+![lose](https://github.com/Grzegorz96/Saper-game/assets/129303867/32717b00-e98c-4917-94a8-52dafb717ce1)
+##### Screenshot of win in beginner level
+![won](https://github.com/Grzegorz96/Saper-game/assets/129303867/0e68562a-5095-4236-9fa5-f40de1504669)
+
+
+
+
 
 ##### Screenshot of the intermediate level game
 ![Intermediate](https://github.com/Grzegorz96/Saper-game/assets/129303867/cd9726ac-33da-46a3-9af3-1997a396d6bf)
+
+##### Screenshot in game of intermediate level game
+![inter_game](https://github.com/Grzegorz96/Saper-game/assets/129303867/4237c45b-4e87-4a58-8833-c98d9bb55622)
+##### Screenshot of win in intermediate level
+![inter_won](https://github.com/Grzegorz96/Saper-game/assets/129303867/4c72b6e1-cadd-4871-baae-92dfa134fcfc)
+
+
+
 
 ##### Screenshot of the advanced level game
 ![advanced](https://github.com/Grzegorz96/Saper-game/assets/129303867/e6b0d50e-d792-488c-ab8d-db2378c7c9e5)
