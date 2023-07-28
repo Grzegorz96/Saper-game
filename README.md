@@ -97,10 +97,14 @@ Screenshot of the difficulty level selection window
 Screenshot of the beginner level game
 ![beginner](https://github.com/Grzegorz96/Saper-game/assets/129303867/375bded5-ff57-4640-8665-825f796abf2e)
 
+Screenshot in game of beginner level game
+![scared_face](https://github.com/Grzegorz96/Saper-game/assets/129303867/4b05b591-d62b-4e63-9064-688fd67aef10)
+
+
 Screenshot of the intermediate level game
 ![Intermediate](https://github.com/Grzegorz96/Saper-game/assets/129303867/cd9726ac-33da-46a3-9af3-1997a396d6bf)
 
-Screenshot of the adcanved level game
+Screenshot of the advanced level game
 ![advanced](https://github.com/Grzegorz96/Saper-game/assets/129303867/e6b0d50e-d792-488c-ab8d-db2378c7c9e5)
 
 Screenshot of the professional level game
