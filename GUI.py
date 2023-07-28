@@ -1,52 +1,92 @@
 from tkinter import *
 import Config
-from Functions import init_game_table, make_grid, right_click, update_clock, update_mines_counter, change_face,\
-    left_click, reset_game
+from Functions import init_game_table, make_grid, right_click, update_clock, update_mines_counter, normal_face,\
+    left_click, reset_game, configure_variables_for_game_label, create_app_geometry, \
+    configure_variables_for_start_label, scared_face
+from pygame import mixer
 
 
 def init_window():
     root = Tk()
-    # Definition width and height of app window.
-    window_width = 880
-    window_height = 600
-    # Definition width and height of monitor window.
-    screen_width = 1920
-    screen_height = 1080
-    # Setting center of window
-    center_x = int(screen_width / 2 - window_width / 2)
-    center_y = int(screen_height / 2 - window_height / 2)
-    # Making tittle, geometry, resizable, color background, photos.
-    root.geometry(f"{window_width}x{window_height}+{center_x}+{center_y}")
     root.title("SAPER")
     root.resizable(width=True, height=True)
-
+    create_app_geometry(root, 880, 600)
     # Return root object into Main module.
     return root
 
 
-def init_top_panel(root):
-    Config.mines_counter_object = Label(root, bg="black", fg="red", font="Digital-7, 40")
+# Initialization authentication label.
+def init_start_label(root):
+    mixer.music.load(r"Sounds/saper_soundtrack.mp3")
+    mixer.music.play(-1)
+    # Function called first time will not enter this part of code, because current_page = None.
+    if isinstance(Config.current_page, Label):
+        Config.current_page.destroy()
+
+    Config.photo = PhotoImage(file="Photos/background.png")
+    start_label = Label(root, width=880, height=600, image=Config.photo)
+    start_label.pack()
+
+    # Making labels and buttons.
+    Label(start_label, text="Poziom trudności:", font=("Arial", 25), bg="#A9A9A9").place(x=315, y=200, height=40)
+
+    Button(start_label, text="Początkujący", width=30, bg="#A9A9A9", highlightbackground="#1E90FF",
+           command=lambda rows=9, columns=15, mines_number=10, window_width=460, window_height=430:
+           configure_variables_for_game_label(rows, columns, mines_number, window_width,
+                                              window_height, root, init_game_label)).place(x=300, y=250)
+    Button(start_label, text="Średniozaawansowany", width=30, bg="#A9A9A9", highlightbackground="#1E90FF",
+           command=lambda rows=15, columns=25, mines_number=40, window_width=740, window_height=615:
+           configure_variables_for_game_label(rows, columns, mines_number, window_width,
+                                              window_height, root, init_game_label)).place(x=300, y=290)
+    Button(start_label, text="Zaawansowany", width=30, bg="#A9A9A9", highlightbackground="#1E90FF",
+           command=lambda rows=20, columns=35, mines_number=100, window_width=1020, window_height=770:
+           configure_variables_for_game_label(rows, columns, mines_number, window_width,
+                                              window_height, root, init_game_label)).place(x=300, y=330)
+    Button(start_label, text="Profesjonalista", width=30, bg="#A9A9A9", highlightbackground="#1E90FF",
+           command=lambda rows=25, columns=45, mines_number=200, window_width=1300, window_height=925:
+           configure_variables_for_game_label(rows, columns, mines_number, window_width,
+                                              window_height, root, init_game_label)).place(x=300, y=370)
+
+    # assignment login_label into Config.current_page.
+    Config.current_page = start_label
+
+
+def init_game_label(root, window_width, window_height):
+    mixer.music.stop()
+    Config.current_page.destroy()
+
+    game_label = Label(root, width=window_width, height=window_height)
+    game_label.grid()
+
+    Config.mines_counter_object = Label(game_label, bg="black", fg="red", font="Digital-7, 40")
     Config.mines_counter_object.grid(row=0, column=0, columnspan=6, ipadx=10, pady=30, padx=(15, 0))
     update_mines_counter()
 
-    Config.face_object = Button(root, pady=20, padx=30, command=lambda: reset_game(init_game_board, root))
+    Config.face_object = Button(game_label, pady=20, padx=30, command=lambda: reset_game(init_game_board, game_label))
     Config.face_object.grid(row=0, column=Config.columns // 2 - 1, columnspan=3, pady=30)
     Config.face_object["image"] = Config.images["faces"][0]
 
-    Config.clock_object = Label(root, bg="black", fg="red", font="Digital-7, 40")
+    Config.clock_object = Label(game_label, bg="black", fg="red", font="Digital-7, 40")
     Config.clock_object.grid(row=0, column=Config.columns - 6, columnspan=6, ipadx=10, pady=30)
-    update_clock(root)
+    update_clock()
 
+    Button(game_label, text="Wróć do menu", font="Digital-7, 8",
+           command=lambda: configure_variables_for_start_label(root, init_start_label)).place(x=window_width-123, y=5,
+                                                                                              width=100, height=25)
 
-def init_game_board(root):
-    buttons = [Button(root) for _ in range(Config.rows * Config.columns)]
-    game_table = init_game_table()
+    def init_game_board():
+        Config.current_list_of_buttons = [Button(game_label) for _ in range(Config.rows * Config.columns)]
+        game_table = init_game_table()
 
-    for i in range(Config.rows):
-        for j in range(Config.columns):
-            make_grid(buttons, j, i)
-            button = buttons[i * Config.columns + j]
-            button.bind("<Button-1>", lambda event, b=button: left_click(buttons, b, game_table, root))
-            button.bind("<Button-3>", lambda event, b=button: right_click(buttons, b, game_table))
+        for i in range(Config.rows):
+            for j in range(Config.columns):
+                make_grid(j, i)
+                button = Config.current_list_of_buttons[i * Config.columns + j]
+                button.config(command=lambda b=button: left_click(b, game_table, game_label))
+                button.bind("<Button-1>", lambda event: scared_face())
+                button.bind("<ButtonRelease-1>", lambda event: normal_face())
+                button.bind("<Button-3>", lambda event, b=button: right_click(b, game_table))
 
-            button.bind("<ButtonRelease>", lambda event: change_face())
+    init_game_board()
+
+    Config.current_page = game_label

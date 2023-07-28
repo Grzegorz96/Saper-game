@@ -1,11 +1,10 @@
-from GUI import init_window, init_top_panel, init_game_board
-from Functions import loading_images
+from GUI import init_window, init_start_label
+from Functions import loading_images, init_sound_mixer
 
 
 if __name__ == "__main__":
     root = init_window()
+    init_sound_mixer()
     loading_images()
-    init_top_panel(root)
-    init_game_board(root)
-
+    init_start_label(root)
     root.mainloop()
