@@ -1,6 +1,4 @@
-
 ![tło readme](https://github.com/Grzegorz96/Saper-game/assets/129303867/1dc4d7b8-853f-46b3-99e3-57183c492a15)
-
 # SAPER
 
 My game design is based on the iconic Minesweeper game written in 1981 by Robert Donner. In my version, I updated the game with new sounds and graphics. I also added four 
@@ -74,9 +72,12 @@ The program was created from four modules. The Config.py module contains all the
 
 
 ## Lessons Learned
-While writing the program, I learned a lot about working with the for loop and object loop ... Optimalization for destroying object ...
+While writing the program, I learned a lot about working with for loops and working with 2-D lists. I had to imagine how the program was supposed to work under the hood and implement all the solutions with which there were a lot of problems. This project required a bit more math than just program writing skills. I had to optimize the project in terms of destroying unnecessary objects because the program generates a whole lot of them and not destroying objects was associated with slow work of the program. In the case of the professional game level, where there are 1250 fields generated once, generating new fields ten times and not destroying the old ones was associated with a large loss of performance. In this project, I had to use my imagination to combine the operation of the buttons with the generated board of bombs and numbers. I had to pay attention to changing the states of global flags at the right time, so that the program knew what it could do and what it couldn't do. The program developed my programming skills and taught me to solve problems in a slightly different way.
+
 
 ## Features to be implemented
+- Scoring system implementation.
+- Adding a backend so that users can create accounts and compete with each other in the number of points scored and time of completion of individual difficulty levels.
 
 
 ## Authors
