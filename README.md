@@ -78,6 +78,7 @@ While writing the program, I learned a lot about working with for loops and work
 ## Features to be implemented
 - Scoring system implementation.
 - Adding a backend so that users can create accounts and compete with each other in the number of points scored and time of completion of individual difficulty levels.
+- Some of the button objects from the global current_list_of_buttons are overwritten with labels and not all buttons are destroyed when the game is reset, the full destruction of the buttons takes place only when the entire game_label is destroyed when changing the window. The way to fix this would be to operate on two global lists, buttons and labels. Then, when the game is reset, it would be possible to destroy all created objects that are no longer needed.
 
 
 ## Authors
