@@ -63,7 +63,7 @@ The program was created from four modules. The Config.py module contains all the
 - Install required packages on your venv:
 
 ```bash
-  pip install pygame 
+  pip install pygame==2.5.0
 ```
 - Run Main.py on Linux:
 ```bash
