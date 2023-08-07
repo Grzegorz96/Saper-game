@@ -93,7 +93,7 @@ E-mail: grzesstrzeszewski@gmail.com
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT](https://github.com/Grzegorz96/Saper-game/blob/master/LICENSE.md)
 
 
 ## Screnshoots
