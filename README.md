@@ -11,10 +11,10 @@ The program was created from four modules. The Config.py module contains all the
 
 ## Features
 - Choice of four difficulty levels:
-##### - Beginner (rows=9, columns=15, mines_number=10)
-##### - Intermediate (rows=15, columns=25, mines_number=40)
-##### - Advanced (rows=20, columns=35, mines_number=100)
-##### - Professional (rows=25, columns=45, mines_number=200)
+###### - Beginner (rows=9, columns=15, mines_number=10)
+###### - Intermediate (rows=15, columns=25, mines_number=40)
+###### - Advanced (rows=20, columns=35, mines_number=100)
+###### - Professional (rows=25, columns=45, mines_number=200)
 - Dynamic generation of the game board depending on the user's choice.
 - Sound system for every user action.
 - Recursion function revealing empty squares on the board.
