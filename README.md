@@ -100,12 +100,12 @@ E-mail: grzesstrzeszewski@gmail.com
 ##### Screenshot of the difficulty level selection window
 ![start_window](https://github.com/Grzegorz96/Saper-game/assets/129303867/b44363b8-3329-4bfa-898c-20db28ebe366)
 ##### Screenshot a beginner level game
-##### Screenshot in game of beginner level game
 ![beginner](https://github.com/Grzegorz96/Saper-game/assets/129303867/375bded5-ff57-4640-8665-825f796abf2e)
+##### Screenshot in game of beginner level game
 ![scared_face](https://github.com/Grzegorz96/Saper-game/assets/129303867/4b05b591-d62b-4e63-9064-688fd67aef10)
 ##### Screenshot of a beginner level lose
-##### Screenshot of a beginner level win
 ![lose](https://github.com/Grzegorz96/Saper-game/assets/129303867/32717b00-e98c-4917-94a8-52dafb717ce1)
+##### Screenshot of a beginner level win
 ![won](https://github.com/Grzegorz96/Saper-game/assets/129303867/0e68562a-5095-4236-9fa5-f40de1504669)
 ##### Screenshot of an intermediate level game
 ![Intermediate](https://github.com/Grzegorz96/Saper-game/assets/129303867/cd9726ac-33da-46a3-9af3-1997a396d6bf)
