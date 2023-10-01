@@ -2,7 +2,6 @@
 face_object = None
 mines_counter_object = None
 clock_object = None
-photo = None
 current_list_of_buttons = None
 current_page = None
 is_clock_work = False

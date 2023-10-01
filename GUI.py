@@ -10,8 +10,8 @@ from Functions import init_game_table, make_grid, right_click, update_clock, upd
 from pygame import mixer
 
 
-# Initialization main window.
 def init_window():
+    """Function responsible for initializing the main application window."""
     # Creating root object.
     root = Tk()
     # Creating title and resizable.
@@ -23,8 +23,8 @@ def init_window():
     return root
 
 
-# Initialization start label.
 def init_start_label(root):
+    """The function responsible for initializing the start_label to select the game difficulty level."""
     # Run soundtrack in infinite loop.
     mixer.music.load(r"Sounds/saper_soundtrack.mp3")
     mixer.music.play(-1)
@@ -32,7 +32,7 @@ def init_start_label(root):
     if isinstance(Config.current_page, Label):
         Config.current_page.destroy()
     # Create start_label with photo and pack it into root.
-    start_label = Label(root, width=880, height=600, image=Config.photo)
+    start_label = Label(root, width=880, height=600, image=Config.images["background"])
     start_label.pack()
 
     # Creating a difficulty level selection label.
@@ -66,8 +66,9 @@ def init_start_label(root):
     Config.current_page = start_label
 
 
-# Initialization game label.
 def init_game_label(root, window_width, window_height):
+    """The function responsible for initializing the game_label, which contains objects informing about the game state
+    and a game reset button."""
     # Stop the sound of the soundtrack.
     mixer.music.stop()
     # Destroying current_page.
@@ -100,8 +101,9 @@ def init_game_label(root, window_width, window_height):
            command=lambda: configure_variables_for_start_label(root, init_start_label)).place(x=window_width-123, y=5,
                                                                                               width=100, height=25)
 
-    # Initialization game_board.
     def init_game_board():
+        """The function responsible for initializing game_board (button panel) and calling the function to initialize
+        the game_table (bomb panel and numbers of adjacent bombs)."""
         # Creating global current_list_of_buttons containing the number of buttons equal to rows x columns.
         Config.current_list_of_buttons = [Button(game_label) for _ in range(Config.rows * Config.columns)]
         # Creating local game_table from function call. This is a generated 2d list, it contains bombs and numbers 0-8.

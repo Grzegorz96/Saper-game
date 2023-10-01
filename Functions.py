@@ -1,13 +1,18 @@
 # Modules import.
+# Import tkinter module.
 from tkinter import *
+from tkinter import messagebox
+# If an error occurs while loading the images, the program will close with an appropriate message.
+from sys import exit
 # Import global variables.
 import Config
 import random
 from pygame import mixer
 
 
-# Initialization game_table.
 def init_game_table():
+    """The function responsible for random initialization of the bomb, numbers of adjacent bombs and empty fields list.
+    This is a 2d list."""
     # Creating 2d table for range columns and rows. First a list with a range of columns, then as many lists as there
     # are rows.
     # game_table is like [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]].
@@ -51,8 +56,8 @@ def init_game_table():
     return game_table
 
 
-# The function of finding adjacent coordinates of an element.
 def find_neighbours(y, x):
+    """The function responsible for finding adjacent coordinates of an element from game_table."""
     # Temporary list.
     neighbours = []
 
@@ -73,8 +78,8 @@ def find_neighbours(y, x):
     return neighbours
 
 
-# Function for clock updating.
 def update_clock():
+    """The function responsible for updating the time on the clock."""
     # Checking if the clock should work.
     if Config.is_clock_work:
         # Adding += 1 second.
@@ -85,23 +90,23 @@ def update_clock():
         Config.clock_object.after(1000, update_clock)
 
 
-# A function that updates the minutes counter on the game label.
 def update_mines_counter():
+    """The function responsible for updating the mines on the mines_counter_object."""
     Config.mines_counter_object["text"] = "0" * (4 - len(str(Config.flags_number_left))) + str(Config.flags_number_left)
 
 
-# A function that changes the image of  face to a smiling one.
 def normal_face():
+    """The function responsible for changing the image on face_object to a normal face."""
     Config.face_object["image"] = Config.images["faces"][0]
 
 
-# A function that changes the image of  face to a scared one.
 def scared_face():
+    """The function responsible for changing the image on face_object to a scared face."""
     Config.face_object["image"] = Config.images["faces"][1]
 
 
-# The function that is responsible for pasting objects on the label.
 def make_grid(x, y):
+    """The function responsible for locating game_board buttons on the game_label."""
     # If the object's column is 0 then we add an extra margin to the left.
     if x == 0:
         Config.current_list_of_buttons[y*Config.columns+x].grid(row=y+1, column=x, padx=(20, 0))
@@ -110,8 +115,9 @@ def make_grid(x, y):
         Config.current_list_of_buttons[y*Config.columns+x].grid(row=y+1, column=x)
 
 
-# Game end feature.
 def lost_game(game_table, game_label, button):
+    """The function responsible for configuring game_board when losing the game. Disables all previously not disabled
+    objects, uncovers booms, and shows crossed-out flags in the places of incorrectly flagged mines."""
     # Changing flag of clock on False.
     Config.is_clock_work = False
     # Unbinding and disabling buttons that have not been pressed before.
@@ -143,8 +149,9 @@ def lost_game(game_table, game_label, button):
                     Config.current_list_of_buttons[i * Config.columns + j]["image"] = Config.images["flags"][1]
 
 
-# Game win feature
 def won_game():
+    """The function responsible for configuring the game_board when winning a game. Disables all previously not disabled
+    objects."""
     # Changing flag of clock on False.
     Config.is_clock_work = False
     # Disable and unbind buttons that have not been pressed before.
@@ -158,8 +165,10 @@ def won_game():
                 Config.current_list_of_buttons[i * Config.columns + j].unbind("<ButtonRelease-1>")
 
 
-# Button update function.
 def update_button(index, field, game_table, game_label):
+    """The function responsible for appropriate updating of the button that does not contain a bomb. The function
+    supports buttons whose fields contain the numbers of adjacent bombs or empty fields. In the case of empty fields,
+    recursion will be performed revealing adjacent fields."""
     # Changing the state of the button to disabled and unbinding it.
     Config.current_list_of_buttons[index].configure(state="disabled", border=1, highlightbackground="black")
     Config.current_list_of_buttons[index].unbind("<Button-1>")
@@ -206,8 +215,9 @@ def update_button(index, field, game_table, game_label):
                 update_button(y * Config.columns + x, game_table[y][x], game_table, game_label)
 
 
-# Left button function.
 def left_click(button, game_table, game_label):
+    """The function responsible for the left mouse button clicked on the game_bord button. The function checks whether
+    there is a bomb under this field and performs appropriate operations in both cases."""
     # The function will do nothing if we click on the protected field with the flag.
     if not button.cget("image"):
         # Creating index of button and the corresponding field from game_table.
@@ -229,8 +239,9 @@ def left_click(button, game_table, game_label):
             update_button(index, field, game_table, game_label)
 
 
-# Right click function.
 def right_click(button, game_table):
+    """The function responsible for the right mouse button clicked on the game_bord button. The function checks whether
+    there is already a flag on this button and performs the appropriate operation in both cases."""
     # Creating index of button and the corresponding field from game_table.
     index = Config.current_list_of_buttons.index(button)
     field = game_table[index // Config.columns][index % Config.columns]
@@ -274,17 +285,23 @@ def right_click(button, game_table):
     update_mines_counter()
 
 
-# A function that loads images into a global dictionary and a global variable.
 def loading_images():
-    Config.images["digits"] = [PhotoImage(file="Photos/" + str(i) + ".png") for i in range(1, 9)]
-    Config.images["faces"] = [PhotoImage(file="Photos/face" + str(i) + ".png") for i in range(1, 5)]
-    Config.images["flags"] = [PhotoImage(file="Photos/flag.png"), PhotoImage(file="Photos/crossed_out_flag.png")]
-    Config.images["mines"] = [PhotoImage(file="Photos/mine.png"), PhotoImage(file="Photos/first_mine.png")]
-    Config.photo = PhotoImage(file="Photos/background.png")
+    """The function responsible for loading graphical static files into the global dictionary and global variable."""
+    try:
+        Config.images["digits"] = [PhotoImage(file="Photos/" + str(i) + ".png") for i in range(1, 9)]
+        Config.images["faces"] = [PhotoImage(file="Photos/face" + str(i) + ".png") for i in range(1, 5)]
+        Config.images["flags"] = [PhotoImage(file="Photos/flag.png"), PhotoImage(file="Photos/crossed_out_flag.png")]
+        Config.images["mines"] = [PhotoImage(file="Photos/mine.png"), PhotoImage(file="Photos/first_mine.png")]
+        Config.images["background"] = PhotoImage(file="Photos/background.png")
+    except TclError:
+        messagebox.showerror("Błąd podczas ładowania plików graficznych.",
+                             "Sprawdź czy w twoim katalogu 'Photos' znajdują się wszystkie wymagane pliki graficzne.")
+        exit(1)
 
 
-# Game reset function
 def reset_game(init_game_board, game_label):
+    """The function responsible for resetting the game: creating a new game_board and restoring the default values of
+    global variables for a given difficulty level."""
     # Playing a button sound.
     run_sound_effect("button.wav")
     # Disabling the clock function by changing the global flag.
@@ -313,8 +330,9 @@ def reset_game(init_game_board, game_label):
     update_clock()
 
 
-# Indirect function that configures global variables before creating the game.
 def configure_variables_for_game_label(rows, columns, mines_number, window_width, window_height, root, init_game_label):
+    """The function responsible for configuring global variables for the selected game difficulty level before starting
+    the game."""
     # Run sound.
     run_sound_effect("button.wav")
     # Global variables are assigned values selected by the user.
@@ -330,8 +348,9 @@ def configure_variables_for_game_label(rows, columns, mines_number, window_width
     init_game_label(root, window_width, window_height)
 
 
-# Indirect function to configure global variables before going to start_label.
 def configure_variables_for_start_label(root, init_start_label):
+    """The function responsible for configuring global variables to default values when the user wants to return to
+    start_label."""
     # Run sound.
     run_sound_effect("button.wav")
     # Set default global variables
@@ -352,8 +371,8 @@ def configure_variables_for_start_label(root, init_start_label):
     init_start_label(root)
 
 
-# A function that creates the window geometry.
 def create_app_geometry(root, window_width, window_height):
+    """The function responsible for changing the size of the main application window."""
     # Definition width and height of monitor window.
     screen_width = 1920
     screen_height = 1080
@@ -364,15 +383,15 @@ def create_app_geometry(root, window_width, window_height):
     root.geometry(f"{window_width}x{window_height}+{center_x}+{center_y}")
 
 
-# Initialization sound mixer for app.
 def init_sound_mixer():
+    """The function responsible for initializing the sound mixer for application."""
     mixer.init()
     # Setting volume on 0.2.
     mixer.music.set_volume(0.2)
 
 
-# Sound effect function.
 def run_sound_effect(sound):
+    """The function responsible for running sound effects in application."""
     # Making object of sound effect, setting volume on 0.2 and play.
     sound_effect = mixer.Sound(fr"Sounds/{sound}")
     sound_effect.set_volume(0.2)
