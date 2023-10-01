@@ -66,12 +66,12 @@ The program was created from four modules. The Config.py module contains all the
  python3 -m venv venv
 ```
 - Activate virtual enviroment:
-```cmd
+```
  source venv/bin/activate
 ```
 - Install required packages on your venv:
 ```bash
-  pip install pygame==2.5.0
+ pip install pygame==2.5.0
 ```
 - Run Main.py on Linux:
 ```bash
