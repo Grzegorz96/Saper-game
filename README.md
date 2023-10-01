@@ -59,9 +59,17 @@ The program was created from four modules. The Config.py module contains all the
 ```bash
  git clone https://github.com/Grzegorz96/Saper-game.git
 ```
+- Go to the Saper-game directory.
 - Open the Saper-game on your IDE.
+- Create virtual enviroment for the project:
+```bash
+ python3 -m venv venv
+```
+- Activate virtual enviroment:
+```bash
+ source venv/bin/activate
+```
 - Install required packages on your venv:
-
 ```bash
   pip install pygame==2.5.0
 ```
