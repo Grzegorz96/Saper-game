@@ -61,15 +61,15 @@ The program was created from four modules. The Config.py module contains all the
 ```
 - Go to the Saper-game directory.
 - Open the Saper-game on your IDE.
-- Create virtual enviroment for the project:
+- Create virtual enviroment for the project (Linux):
 ```bash
  python3 -m venv venv
 ```
-- Activate virtual enviroment:
+- Activate virtual enviroment (Linux):
 ```bash
  source venv/bin/activate
 ```
-- Install required packages on your venv:
+- Install required packages on your activated virtual enviroment:
 ```bash
  pip install pygame==2.5.0
 ```
