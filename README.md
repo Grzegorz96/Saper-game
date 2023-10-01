@@ -79,7 +79,7 @@ While writing the program, I learned a lot about working with for loops and work
 - Scoring system implementation.
 - Adding a backend so that users can create accounts and compete with each other in the number of points scored and time of completion of individual difficulty levels.
 - In lost_game and update_button functions, some of the button objects from the global current_list_of_buttons are overwritten with labels and not all buttons are destroyed when the game is reset, the full destruction of the buttons takes place only when the entire game_label is destroyed when changing the window. The way to fix this would be to operate on two global lists, buttons and labels. Then, when the game is reset, it would be possible to destroy all created objects that are no longer needed.
-- Loading sound files into the global dictionary when running Main.py, then the program uses the files stored in memory rather than directly from the source to the computer.
+- Loading of sound files into the global "sounds" dictionary when running Main.py. During operation, the program will use sounds stored in memory instead of reading them directly from the computer.
 
 
 ## Authors
