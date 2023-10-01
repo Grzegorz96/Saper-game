@@ -66,7 +66,7 @@ The program was created from four modules. The Config.py module contains all the
  python3 -m venv venv
 ```
 - Activate virtual enviroment:
-```bash
+```cmd
  source venv/bin/activate
 ```
 - Install required packages on your venv:
