@@ -36,7 +36,7 @@ def init_start_label(root):
     start_label.pack()
 
     # Creating a difficulty level selection label.
-    Label(start_label, text="Poziom trudności:", font=("Arial", 25), bg="#A9A9A9").place(x=315, y=200, height=40)
+    Label(start_label, text="Poziom trudności:", font=("Arial", 22), bg="#A9A9A9").place(x=315, y=200)
     # "Beginner" button with specific values in default parameters and assigning it an indirect function that configures
     # global variables for the game.
     Button(start_label, text="Początkujący", width=30, bg="#A9A9A9", highlightbackground="#1E90FF",
