@@ -53,6 +53,7 @@ The program was created from four modules. The Config.py module contains all the
 #### Requirements:
 ##### Programs and libraries:
 - Python 3.10.6
+- IDE, for example Pycharm
 - pygame 2.5.0
 #### Instruction:
 - Download Saper-game repository:
