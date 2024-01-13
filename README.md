@@ -92,7 +92,7 @@ While writing the program, I learned a lot about working with for loops and work
 
 ## Authors
 
-- [@Grzegorz96](https://www.github.com/Grzegorz96)
+[@Grzegorz96](https://www.github.com/Grzegorz96)
 
 
 ## Contact
