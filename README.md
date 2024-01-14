@@ -1,15 +1,28 @@
 ![tło readme](https://github.com/Grzegorz96/Saper-game/assets/129303867/1dc4d7b8-853f-46b3-99e3-57183c492a15)
 # SAPER
 
-The look of my game is based on the cult game Minesweeper written in 1981 by Robert Donner. In my version, I updated the game with new sounds and graphics. I also added four 
-difficulty levels. The game dynamically generates the size of the game board and the corresponding game table, depending on the selected difficulty level. The project has the function of dynamic expansion of fields through recursion. My project is written and optimized for the Linux operating system.
+The Saper application is a desktop game whose appearance is based on the iconic Minesweeper game written in 1981 by Robert Donner. In my version, I updated the game with new sounds and graphics. Additionally, I introduced four difficulty levels. The game dynamically generates the size of the game board and the corresponding game table, depending on the selected difficulty level. The project includes the feature of dynamically uncovering fields through recursion. My game is written and optimized for the Linux operating system.
 
 
 ## Description of the modules
-The program was created from four modules. The Config.py module contains all the global variables needed for the correct operation of the entire program. It consists of objects that need global access, flags, a dictionary with the names of graphic files and global integers. Function.py is the whole brain of the program, it contains the most important functions. It determines what is hidden under the clicked button, generates the entire game_table, which is later responsible for where the bombs and fields with numbers are located. Game_table is a generated 2-D list with only zeros at first, then the required number of mines is randomly generated on this table. For list items that are not generated mines, adjacent item coordinates are searched. Then it is checked how many of the found elements are bombs. In the last step, the number of adjacent bombs is is overwritten for zero, and so on for each element that is not a bomb. The function in the module recurses to display empty fields and fields adjacent to bombs. Modul is responsible for sounds and graphic files. This module determines when a win or loss occurs and what happens in those cases. In this file, global variables change their values and objects that are no longer needed are destroyed for better program operation and better memory management. GUI.py is responsible for creating the main application window and initializing the application screens: start_label and game_label. In start_label we choose the difficulty level, after selecting the difficulty level, the game_label is initialized with the parameters and global variables selected for it. In the game_label there is a function responsible for initializing the game_board and calling the game_table function. In the game_label the clock and mines counter update function is called for the first time. Main.py is the module that executes the program. It calls the main application window creation functions, initializes the sound mixer object, loads the names of the needed images into a global variable, and initializes the start_label for the root object. Finally, the main loop method of the program is executed on the root object, thanks to this method, the program does not terminate and runs in a loop.
+
+The program consists of 4 modules, each of which plays a unique role in the functioning of the application. Below is a brief description of each module:
+
+Config.py:
+- The Config.py module contains all global variables essential for the correct operation of the entire program. It includes objects requiring global access.
+
+Functions.py:
+- The Functions.py module acts as the brain of the program, housing crucial functions. It determines what is hidden under the clicked button, generates the entire game_table, which is later responsible for where the bombs and fields with numbers are located. Game_table is a generated 2-D list with only zeros at first, then the required number of mines is randomly generated on this table. For list items that are not generated mines, adjacent item coordinates are searched. Then it is checked how many of the found elements are bombs. In the last step, the number of adjacent bombs is is overwritten for zero, and so on for each element that is not a bomb. The function in the module recursively discovers empty fields and fields adjacent to bombs. Modul is responsible for sounds and graphic files. This module determines when a win or loss occurs and what happens in those cases. In this file, global variables change their values and objects that are no longer needed are destroyed for better program operation and better memory management.
+
+GUI.py:
+- The GUI.py module is responsible for creating the main application window and initializing the application screens: start_label and game_label. In start_label we choose the difficulty level, after selecting the difficulty level, the game_label is initialized with the parameters and global variables selected for it. In the game_label there is a function responsible for initializing the game_board and calling the game_table function. In the game_label the clock and mines counter update function is called for the first time.
+
+Main.py:
+- The Main.py module executes the program. It calls the main application window creation functions, initializes the sound mixer object, loads the names of the needed images into a global variable, and calls the funkcje init_start_label for the root object. Finally, the main loop method of the program is executed on the root object, thanks to this method, the program does not terminate and runs in a loop.
 
 
 ## Features
+
 - Choice of four difficulty levels:
 ###### - Beginner (rows=9, columns=15, mines_number=10)
 ###### - Intermediate (rows=15, columns=25, mines_number=40)
@@ -81,10 +94,12 @@ The program was created from four modules. The Config.py module contains all the
 
 
 ## Lessons Learned
+
 While writing the program, I learned a lot about working with for loops and working with 2-D lists. I had to imagine how the program was supposed to work under the hood and implement all the solutions with which there were a lot of problems. This project required a bit more math than just program writing skills. I had to optimize the project in terms of destroying unnecessary objects because the program generates a whole lot of them and not destroying objects was associated with slow work of the program. In the case of the professional game level there are 1250 fields generated once, resetting the game creates new objects. Repeatedly generating new fields and not destroying the old ones was associated with a large performance loss. In this project, I had to use my imagination to combine the operation of the buttons with the generated board of bombs and numbers. I had to pay attention to changing the states of global flags at the right time, so that the program knew what it could do and what it couldn't do. The program developed my programming skills and taught me to solve problems in a slightly different way.
 
 
 ## Features to be implemented
+
 - Scoring system implementation.
 - Adding a backend so that users can create accounts and compete with each other in the number of points scored and time of completion of individual difficulty levels.
 - In lost_game and update_button functions, some of the button objects from the global current_list_of_buttons are overwritten with labels and not all buttons are destroyed when the game is reset, the full destruction of the buttons takes place only when the entire game_label is destroyed when changing the window. The way to fix this would be to operate on two global lists, buttons and labels. Then, when the game is reset, it would be possible to destroy all created objects that are no longer needed.
