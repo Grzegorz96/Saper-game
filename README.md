@@ -85,6 +85,10 @@ Main.py:
 ```
 - Install required packages on your activated virtual enviroment:
 ```bash
+  pip install -r requirements.txt
+```
+- or
+```bash
  pip install pygame==2.5.0
 ```
 - Run Main.py on Linux:
