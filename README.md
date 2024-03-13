@@ -97,7 +97,7 @@ Main.py:
 ```
 
 
-## Lessons Learned
+## Lessons learned
 
 While writing the program, I learned a lot about working with for loops and working with 2-D lists. I had to imagine how the program was supposed to work under the hood and implement all the solutions with which there were a lot of problems. This project required a bit more math than just program writing skills. I had to optimize the project in terms of destroying unnecessary objects because the program generates a whole lot of them and not destroying objects was associated with slow work of the program. In the case of the professional game level there are 1250 fields generated once, resetting the game creates new objects. Repeatedly generating new fields and not destroying the old ones was associated with a large performance loss. In this project, I had to use my imagination to combine the operation of the buttons with the generated board of bombs and numbers. I had to pay attention to changing the states of global flags at the right time, so that the program knew what it could do and what it couldn't do. The program developed my programming skills and taught me to solve problems in a slightly different way.
 
