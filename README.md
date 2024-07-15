@@ -1,4 +1,4 @@
-![tło readme](https://github.com/Grzegorz96/Saper-game/assets/129303867/1dc4d7b8-853f-46b3-99e3-57183c492a15)
+![logo](https://raw.githubusercontent.com/Grzegorz96/Saper-game/master/docs/readme-images/logo.png)
 # SAPER
 
 The Saper application is a desktop game whose appearance is based on the iconic Minesweeper game written in 1981 by Robert Donner. In my version, I updated the game with new sounds and graphics. Additionally, I introduced four difficulty levels. The game dynamically generates the size of the game board and the corresponding game table, depending on the selected difficulty level. The project includes the feature of dynamically uncovering fields through recursion. My game is written and optimized for the Linux operating system.
@@ -127,24 +127,24 @@ E-mail: grzesstrzeszewski@gmail.com
 
 ## Screnshoots
 ##### Screenshot of the difficulty level selection window
-![start_window](https://github.com/Grzegorz96/Saper-game/assets/129303867/b44363b8-3329-4bfa-898c-20db28ebe366)
+![start_window](https://raw.githubusercontent.com/Grzegorz96/Saper-game/master/docs/readme-images/start_window.png)
 ##### Screenshot a beginner level game
-![beginner](https://github.com/Grzegorz96/Saper-game/assets/129303867/375bded5-ff57-4640-8665-825f796abf2e)
+![beginner](https://raw.githubusercontent.com/Grzegorz96/Saper-game/master/docs/readme-images/beginner.png)
 ##### Screenshot in game of beginner level game
-![scared_face](https://github.com/Grzegorz96/Saper-game/assets/129303867/4b05b591-d62b-4e63-9064-688fd67aef10)
+![scared_face](https://raw.githubusercontent.com/Grzegorz96/Saper-game/master/docs/readme-images/scared_face.png)
 ##### Screenshot of a beginner level lose
-![lose](https://github.com/Grzegorz96/Saper-game/assets/129303867/32717b00-e98c-4917-94a8-52dafb717ce1)
+![lose](https://raw.githubusercontent.com/Grzegorz96/Saper-game/master/docs/readme-images/lose.png)
 ##### Screenshot of a beginner level win
-![won](https://github.com/Grzegorz96/Saper-game/assets/129303867/0e68562a-5095-4236-9fa5-f40de1504669)
+![won](https://raw.githubusercontent.com/Grzegorz96/Saper-game/master/docs/readme-images/won.png)
 ##### Screenshot of an intermediate level game
-![Intermediate](https://github.com/Grzegorz96/Saper-game/assets/129303867/cd9726ac-33da-46a3-9af3-1997a396d6bf)
+![Intermediate](https://raw.githubusercontent.com/Grzegorz96/Saper-game/master/docs/readme-images/intermediate.png)
 ##### Screenshot in game of intermediate level game
-![inter_game](https://github.com/Grzegorz96/Saper-game/assets/129303867/4237c45b-4e87-4a58-8833-c98d9bb55622)
+![intermediate_game](https://raw.githubusercontent.com/Grzegorz96/Saper-game/master/docs/readme-images/intermediate_game.png)
 ##### Screenshot of an intermediate level lose
-![inter_lose](https://github.com/Grzegorz96/Saper-game/assets/129303867/e93218bf-b1e3-4029-b8d4-399f52ac1918)
+![intermediate_lose](https://raw.githubusercontent.com/Grzegorz96/Saper-game/master/docs/readme-images/intermediate_lose.png)
 ##### Screenshot of an intermediate level win
-![inter_won](https://github.com/Grzegorz96/Saper-game/assets/129303867/4c72b6e1-cadd-4871-baae-92dfa134fcfc)
+![intermediate_won](https://raw.githubusercontent.com/Grzegorz96/Saper-game/master/docs/readme-images/intermediate_won.png)
 ##### Screenshot of a advanced level game
-![advanced](https://github.com/Grzegorz96/Saper-game/assets/129303867/e6b0d50e-d792-488c-ab8d-db2378c7c9e5)
+![advanced](https://raw.githubusercontent.com/Grzegorz96/Saper-game/master/docs/readme-images/advanced.png)
 ##### Screenshot of a professional level game
-![pro](https://github.com/Grzegorz96/Saper-game/assets/129303867/6813ab92-9ecd-4eae-9069-1b8eee189d56)
+![professional](https://raw.githubusercontent.com/Grzegorz96/Saper-game/master/docs/readme-images/professional.png)
