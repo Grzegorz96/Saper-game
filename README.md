@@ -137,11 +137,11 @@ E-mail: grzesstrzeszewski@gmail.com
 ##### Screenshot of a beginner level win
 ![won](https://raw.githubusercontent.com/Grzegorz96/Saper-game/master/docs/readme-images/won.png)
 ##### Screenshot of an intermediate level game
-![Intermediate](https://raw.githubusercontent.com/Grzegorz96/Saper-game/master/docs/readme-images/intermediate.png)
+![intermediate](https://raw.githubusercontent.com/Grzegorz96/Saper-game/master/docs/readme-images/intermediate.png)
 ##### Screenshot in game of intermediate level game
 ![intermediate_game](https://raw.githubusercontent.com/Grzegorz96/Saper-game/master/docs/readme-images/intermediate_game.png)
 ##### Screenshot of an intermediate level lose
-![intermediate_lose](https://raw.githubusercontent.com/Grzegorz96/Saper-game/master/docs/readme-images/intermediate_lose.png)
+![intermediate_lose](https://raw.githubusercontent.com/Grzegorz96/Saper-game/master/docs/readme-images/inter_lose.png)
 ##### Screenshot of an intermediate level win
 ![intermediate_won](https://raw.githubusercontent.com/Grzegorz96/Saper-game/master/docs/readme-images/intermediate_won.png)
 ##### Screenshot of a advanced level game
