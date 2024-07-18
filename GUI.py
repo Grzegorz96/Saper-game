@@ -3,7 +3,7 @@ from tkinter import *
 # Import global variables.
 import Config
 # Import functions for GUI.
-from Functions import init_game_table, make_grid, right_click, update_clock, update_mines_counter, normal_face,\
+from Functions import init_game_table, make_grid, right_click, update_clock, update_mines_counter, normal_face, \
     left_click, reset_game, configure_variables_for_game_label, create_app_geometry, \
     configure_variables_for_start_label, scared_face
 # Import mixer.
